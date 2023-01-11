@@ -4,8 +4,8 @@
 
 def print_info(func):
     def f(*args, **kwargs):
-        result = func(*args, **kwargs)
-        print(f'Площадь круга равна = {result:1.2f}')
+        result = f'Площадь круга равна = {func(*args, **kwargs):1.2f}'
+        return result
 
     return f
 
@@ -17,4 +17,4 @@ def area(x):
 
 if __name__ == '__main__':
     r = float(input('Введите радиус: '))
-    area(r)
+    print(area(r))

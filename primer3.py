@@ -1,19 +1,21 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def sred_geo(*args):
-    if args:
-        values = [float(arg) for arg in args]
-        values.sort()
-        a = 1
-        n = len(values)
-        for i in values:
-            a = a * pow(i, (1 / n))
-        return a
 
-    else:
-        return None
+def decorator_function(func):
+    def wrapper():
+        print('Функция-обёртка!')
+        print('Оборачиваемая функция: {}'.format(func))
+        print('Выполняем обёрнутую функцию...')
+        func()
+        print('Выходим из обёртки')
+    return wrapper
 
 
-if __name__ == "__main__":
-    print(sred_geo(1, 3, 7, 16, 8))
+@decorator_function
+def hello_world():
+    print('Hello world!')
+
+
+if __name__ == '__main__':
+    hello_world()

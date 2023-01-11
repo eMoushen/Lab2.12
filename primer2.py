@@ -1,19 +1,16 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def garm(*args):
 
-    if args:
-        values = [float(arg) for arg in args]
-        n = len(values)
-        a = 0
-        for i in values:
-            a = a + (1 / i)
-        return n / a
-
-    else:
-        return None
+def hello_world():
+    print('Hello world!')
 
 
-if __name__ == "__main__":
-    print(garm(1, 4, 3, 5, 15))
+def higher_order(func):
+    print('Получена функция {} в качестве аргумента'.format(func))
+    func()
+    return func
+
+
+if __name__ == '__main__':
+    higher_order(hello_world)
